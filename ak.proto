@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package ak;
+
+message Frame {
+  required int32 msg_id = 1;
+  required int32 nonce = 2;
+  required int32 payload_len = 3;
+
+  message Payload {
+    required int32 key_size = 1;
+    required int32 key = 2;
+    required string data = 3;
+  }
+
+  required Payload payload = 4;
+}
